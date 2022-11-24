@@ -62,6 +62,11 @@
 	<div class="container">
 		<div class="row">
 			<h1>Lista de Mascotas</h1>
+			<div class ="row">
+				<div class="col-lg-3"> 
+					<a th:href="@{/mascotas/nuevo}" class="btn btn-primary btn-sm mb3">Agregar Mascota</a>
+				</div>
+			</div>
 		</div>
 		<table class="table table-striped table-bordered">
 			<thead class="table-dark">
@@ -91,6 +96,10 @@
 					<td th:text="${mascota.nombre_dueno}">Dueno</td>
 					<td th:text="${mascota.celular}">Celular</td>
 					<td th:text="${mascota.direccion}">Direccion</td>
+					<td>
+						<a th:href="@{/mascotas/editar/{id}(id=${mascota.id})}" class="btn btn-info">Editar</a>
+						<a th:href="@{/mascotas/{id}(id=${mascota.id})}" class="btn btn-danger">Eliminar</a>
+					</td>
 
 				</tr>
 			</tbody>

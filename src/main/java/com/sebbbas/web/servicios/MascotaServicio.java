@@ -9,4 +9,10 @@ public interface MascotaServicio {
 	public List<Mascota> listarTodasLasMascotas();
 	
 	public Mascota guardarMascota(Mascota mascota);
+	
+	public Mascota obtenerMascotaPorId(Long id);
+	
+	public Mascota actualizarMascota(Mascota mascota);
+	
+	public void eliminarMascota(Long id);
 }

@@ -25,4 +25,20 @@ public class MascotaServicioImlp implements MascotaServicio {
 		return repositorio.save(mascota);
 	}
 
+	@Override
+	public Mascota obtenerMascotaPorId(Long id) {
+		return repositorio.findById(id).get();
+	}
+
+	@Override
+	public Mascota actualizarMascota(Mascota mascota) {
+		return repositorio.save(mascota);
+	}
+
+	@Override
+	public void eliminarMascota(Long id) {
+		repositorio.deleteById(id);
+		
+	}
+
 }
