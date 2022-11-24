@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Editar Mascota</title>
+<title>Registro de Mascotas</title>
 <!-- CSS only -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -62,49 +62,31 @@
 	<div class="container">
 		<div class="row">
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center">Edicion de Mascota</h1>
+				<h1 class = "text-center">Agendar Cita</h1>
 				<div class = "card-body" >
-				<form th:action="@{/mascotas/{id}(id=${mascota.id})}" th:object="${mascota}" method="POST">
+				<form th:action="@{/cita/guardar}" th:object="${cita}" method="POST" style="max-widt:600px;margin:0 auto;">
 					<div class="form-group">
-						<label>Nombre : </label>
-						<input type="text" name="nombre" th:field ="*{nombre}" class="form-control" placeholder="Digite su nombre : " required>
+						<label>Asunto Cita : </label>
+						<input type="text" name="asunto_cita" th:field ="*{asunto_cita}" class="form-control" placeholder="Digite el asunto : " required>
 					</div>
 					<div class="form-group">
-						<label>Identificacion : </label>
-						<input type="text" name="identificacion" th:field ="*{identificacion}" class="form-control" placeholder="Digite la identificacion de la mascota : " required>
+						<label>Descripcion : </label>
+						<input type="text" name="descripcion" th:field ="*{descripcion}" class="form-control" placeholder="Digite una breve descripcion : " required>
 					</div>
 					<div class="form-group">
-						<label>Contrasena : </label>
-						<input type="text" name="contrasena" th:field ="*{contrasena}" class="form-control" placeholder="Digite su contrasena : " required>
+						<label>Fecha : </label>
+						<input type="text" name="fecha" th:field ="*{fecha}" class="form-control" placeholder="Digite la fecha de la cita : " required>
 					</div>
 					<div class="form-group">
-						<label>Tipo animal : </label>
-						<input type="text" name="tipo_animal" th:field ="*{tipo_animal}" class="form-control" placeholder="Digite el tipo de animal : " required>
+						<label>Escoger Veterinario : </label>
+						<select th:field="*{veterinaria}" class="form-control" required>
+						<th:block th:each="veterinaria : ${listaVeterinarios}">
+						<option th:text ="${veterinaria.nombre_veterinario}" th:value="${veterinaria.id}">
+						</option>
+						</th:block>
+						</select>
 					</div>
-					<div class="form-group">
-						<label>Raza : </label>
-						<input type="text" name="raza" th:field ="*{raza}" class="form-control" placeholder="Digite la raza : " required>
-					</div>
-					<div class="form-group">
-						<label>Sexo : </label>
-						<input type="text" name="sexo" th:field ="*{sexo}" class="form-control" placeholder="Digite el sexo de la mascota : " required>
-					</div>
-					<div class="form-group">
-						<label>Edad : </label>
-						<input type="text" name="edad" th:field ="*{edad}" class="form-control" placeholder="Digite la edad de la mascota : " required>
-					</div>
-					<div class="form-group">
-						<label>Nombre Dueno : </label>
-						<input type="text" name="nombre_dueno" th:field ="*{nombre_dueno}" class="form-control" placeholder="Digite el nombre del sueño de la mascota : " required>
-					</div>
-					<div class="form-group">
-						<label>Celular : </label>
-						<input type="text" name="celular" th:field ="*{celular}" class="form-control" placeholder="Digite el celular de contacto : " required>
-					</div>
-					<div class="form-group">
-						<label>Direccion : </label>
-						<input type="text" name="direccion" th:field ="*{direccion}" class="form-control" placeholder="Digite la direccion de contacto : " required>
-					</div>
+
 					<br>
 					<div class="box-footer">
 						<button class="btn btn-success">Guardar</button>
