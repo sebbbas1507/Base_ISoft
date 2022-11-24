@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Listado de Mascotas</title>
+<title>Veterinaria</title>
 <!-- CSS only -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<nav class="navbar navbar-dark bg-dark fixed-top">
+		<nav class="navbar navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" th:href="@{/}">Veterinaria</a>
 				
@@ -58,56 +58,34 @@
 	<br>
 	<br>
 	<br>
-	<br>
 	<div class="container">
 		<div class="row">
-			<h1>Lista de Mascotas</h1>
-			<div class ="row">
-				<div class="col-lg-3"> 
-					<a th:href="@{/mascotas/nuevo}" class="btn btn-primary btn-sm mb3">Agregar Mascota</a>
+			<h1>Bienvenido a la Veterinaria</h1>
+			<div class="row">
+				<div class="col-lg-3">
+					<a th:href="@{/mascotas/nuevo}" class="btn btn-primary btn-sm mb3">Registrar
+						Mascota</a>
 				</div>
 			</div>
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-lg-3">
+					<a th:href="@{/veterinarios/nuevo}" class="btn btn-primary btn-sm mb3">Registrar
+						Veterinario</a>
+				</div>
+			</div>
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-lg-3">
+					<a th:href="@{/cita/nueva}" class="btn btn-primary btn-sm mb3">Agendar Cita</a>
+				</div>
+			</div>
+			<div class="p-2">
+				<a class ="h4" th:href="@{/veterinarios}">Lista de Veterinarios</a> 
+			</div>
 		</div>
-		<table class="table table-striped table-bordered">
-			<thead class="table-dark">
-				<tr>
-					<th>Nombre</th>
-					<th>Identificacion</th>
-					<th>Contrasena</th>
-					<th>Tipo Animal</th>
-					<th>Raza</th>
-					<th>Sexo</th>
-					<th>Edad</th>
-					<th>Dueño</th>
-					<th>Celular</th>
-					<th>Direccion</th>
-					<th>IdCita</th>
-					<th>HistoriaClinica</th>
-					<th>Opcion</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="mascota : ${mascotas}">
-					<td th:text="${mascota.nombre}">Nombre</td>
-					<td th:text="${mascota.identificacion}">Identificacion</td>
-					<td th:text="${mascota.contrasena}">Contrasena</td>
-					<td th:text="${mascota.tipo_animal}">Tipo Animal</td>
-					<td th:text="${mascota.raza}">Raza</td>
-					<td th:text="${mascota.sexo}">Sexo</td>
-					<td th:text="${mascota.edad}">Edad</td>
-					<td th:text="${mascota.nombre_dueno}">Dueno</td>
-					<td th:text="${mascota.celular}">Celular</td>
-					<td th:text="${mascota.direccion}">Direccion</td>
-					<td th:text="${mascota.idCita}">IdCita</td>
-					<td th:text="${mascota.historiaClinica}">HistoriaClinica</td>
-					<td>
-						<a th:href="@{/mascotas/editar/{id}(id=${mascota.id})}" class="btn btn-info">Editar</a>
-						<a th:href="@{/mascotas/{id}(id=${mascota.id})}" class="btn btn-danger">Eliminar</a>
-					</td>
-
-				</tr>
-			</tbody>
-		</table>
 	</div>
 
 </body>

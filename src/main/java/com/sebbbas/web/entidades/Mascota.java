@@ -40,19 +40,24 @@ public class Mascota {
 	private String nombre_dueno;
 	
 	@Column(name = "celular",nullable = false, length =50)
-	private int celular;
+	private long celular;
 	
 	@Column(name = "direccion",nullable = false, length =50)
 	private String direccion;
 	
+	@Column(name = "idCita",nullable = false, length =50)
+	private int idCita;
+	
+	@Column(name = "historiaClinica",nullable = false, length =50)
+	private int historiaClinica;
 	
 	public Mascota() {
 		
 	}
 
-
 	public Mascota(Long id, String nombre, int identificacion, String contrasena, String tipo_animal, String raza,
-			int edad, String sexo, String nombre_dueno, int celular, String direccion) {
+			int edad, String sexo, String nombre_dueno, long celular, String direccion, int idCita,
+			int historiaClinica) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -65,140 +70,121 @@ public class Mascota {
 		this.nombre_dueno = nombre_dueno;
 		this.celular = celular;
 		this.direccion = direccion;
-	}
-
-	public Mascota( String nombre, int identificacion, String contrasena, String tipo_animal, String raza,
-			int edad, String sexo, String nombre_dueno, int celular, String direccion) {
-		super();
-		this.nombre = nombre;
-		this.identificacion = identificacion;
-		this.contrasena = contrasena;
-		this.tipo_animal = tipo_animal;
-		this.raza = raza;
-		this.edad = edad;
-		this.sexo = sexo;
-		this.nombre_dueno = nombre_dueno;
-		this.celular = celular;
-		this.direccion = direccion;
+		this.idCita = idCita;
+		this.historiaClinica = historiaClinica;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getNombre() {
 		return nombre;
 	}
 
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 
 	public int getIdentificacion() {
 		return identificacion;
 	}
 
-
 	public void setIdentificacion(int identificacion) {
 		this.identificacion = identificacion;
 	}
-
 
 	public String getContrasena() {
 		return contrasena;
 	}
 
-
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-
 
 	public String getTipo_animal() {
 		return tipo_animal;
 	}
 
-
 	public void setTipo_animal(String tipo_animal) {
 		this.tipo_animal = tipo_animal;
 	}
-
 
 	public String getRaza() {
 		return raza;
 	}
 
-
 	public void setRaza(String raza) {
 		this.raza = raza;
 	}
-
 
 	public int getEdad() {
 		return edad;
 	}
 
-
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-
 
 	public String getSexo() {
 		return sexo;
 	}
 
-
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-
 
 	public String getNombre_dueno() {
 		return nombre_dueno;
 	}
 
-
 	public void setNombre_dueno(String nombre_dueno) {
 		this.nombre_dueno = nombre_dueno;
 	}
 
-
-	public int getCelular() {
+	public long getCelular() {
 		return celular;
 	}
 
-
-	public void setCelular(int celular) {
+	public void setCelular(long celular) {
 		this.celular = celular;
 	}
-
 
 	public String getDireccion() {
 		return direccion;
 	}
 
-
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
+	public int getIdCita() {
+		return idCita;
+	}
+
+	public void setIdCita(int idCita) {
+		this.idCita = idCita;
+	}
+
+	public int getHistoriaClinica() {
+		return historiaClinica;
+	}
+
+	public void setHistoriaClinica(int historiaClinica) {
+		this.historiaClinica = historiaClinica;
+	}
 
 	@Override
 	public String toString() {
 		return "Mascota [id=" + id + ", nombre=" + nombre + ", identificacion=" + identificacion + ", contrasena="
 				+ contrasena + ", tipo_animal=" + tipo_animal + ", raza=" + raza + ", edad=" + edad + ", sexo=" + sexo
-				+ ", nombre_dueno=" + nombre_dueno + ", celular=" + celular + ", direccion=" + direccion + "]";
+				+ ", nombre_dueno=" + nombre_dueno + ", celular=" + celular + ", direccion=" + direccion + ", idCita="
+				+ idCita + ", historiaClinica=" + historiaClinica + "]";
 	}
- 
 	
 	
 }
